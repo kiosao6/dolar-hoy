@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  amount: number;
+}
+
+const { title, amount } = Astro.props;
+---
+
+<button class="px-3 py-2 rounded-md text-neutral-500 hover:bg-white hover:shadow hover:text-black transition-all flex items-center justify-between gap-4">
+  <span>
+    {title}
+  </span>
+  <span class="font-semibold hidden lg:block">
+    {`Bs.S ${amount}`}
+  </span>
+</button>

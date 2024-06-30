@@ -1,0 +1,13 @@
+---
+interface Props {
+  amount?: string;
+}
+
+const { amount = '37.80' } = Astro.props;
+---
+
+<div class="flex items-center mt-10 text-6xl lg:text-7xl mx-auto w-fit font-semibold">
+  <p>
+    { amount }
+  </p>
+</div>
