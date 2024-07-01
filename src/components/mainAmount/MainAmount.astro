@@ -8,10 +8,10 @@ const { amount = '37.80' } = Astro.props;
 
 <div class="flex items-center flex-col space-y-4 mt-10 text-6xl lg:text-7xl mx-auto w-fit font-semibold">
   <p>
-    { amount }
+    {`${ amount }`}
   </p>
-  <div class="flex flex-col text-center text-xs lg:text-[13px] space-y-1 text-neutral-600">
+  <div class="flex flex-col text-center text-xs space-y-1 text-neutral-500">
     <span class="font-normal">Última actualización</span>
-    <span>01/07/2024</span>
+    <span class="font-bold">01/07/2024</span>
   </div>
 </div>
