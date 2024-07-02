@@ -2,6 +2,7 @@
 import CurrencyButton from '@components/currencyButton/CurrencyButton.astro';
 import Layout from '../layouts/Layout.astro';
 import MainAmount from '@components/mainAmount/MainAmount.astro';
+import Form from '@components/inputFields/Form.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,13 +11,14 @@ import MainAmount from '@components/mainAmount/MainAmount.astro';
 			<h1 class="text-3xl tracking-tight font-[550]">Calculadora</h1>
 			<h2 class="text-neutral-500 text-[15px] tracking-tight">Convierte dólares a bolívares usando la tasa de tu preferencia</h2>
 		</header>
-		<section class="w-full border h-80 rounded-xl mt-8 p-6">
+		<section class="w-full border rounded-xl mt-8 p-6">
 			<div class="flex bg-zinc-100 w-fit p-2 rounded-lg h-11 items-center text-xs tracking-tight">
 				<CurrencyButton title='BCV' amount={36.7} />
 				<CurrencyButton title='Paralelo' amount={40.00} />
 			</div>
 
 			<MainAmount />
+			<Form />
 		</section>
 	</main>
 </Layout>

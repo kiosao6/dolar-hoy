@@ -1,3 +1,3 @@
 export const vibrate = (): void => {
-  window.navigator.vibrate(40);
+  window.navigator.vibrate(30);
 }

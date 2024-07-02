@@ -6,12 +6,12 @@ interface Props {
 const { amount = '37.80' } = Astro.props;
 ---
 
-<div class="flex items-center flex-col space-y-4 mt-10 text-6xl lg:text-7xl mx-auto w-fit font-semibold">
+<div class="flex items-center flex-col space-y-4 my-14 text-6xl lg:text-7xl mx-auto w-fit font-semibold">
   <p>
     {`${ amount }`}
   </p>
   <div class="flex flex-col text-center text-xs space-y-1 text-neutral-500">
     <span class="font-normal">Última actualización</span>
-    <span class="font-bold">01/07/2024</span>
+    <span class="font-bold text-neutral-600">01/07/2024</span>
   </div>
 </div>
