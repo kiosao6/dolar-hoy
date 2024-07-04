@@ -13,7 +13,7 @@ export const CurrencyButton = ({
 }: Props) => {
 
   const $currency = useStore(activeCurrency);
-  const active = (`${$currency}` === title) ? "bg-white shadow text-black" : '';
+  const active = (`${$currency}` === title) ? "bg-white shadow !text-black" : '';
   const onHandleClick = () => {
     vibrate();
     activeCurrency.set(title)
