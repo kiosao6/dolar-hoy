@@ -1,10 +1,25 @@
 ---
 import ThemeSelector from "@components/themeSelector/ThemeSelector.astro";
+import { bcvPrice } from "src/store";
 ---
 
 <header class="border-b py-5">
   <div class="max-w-7xl px-8 xl:px-0 mx-auto flex items-center justify-between">
     Dólar hoy
-    <ThemeSelector />
+    <div class="flex items-center gap-2 text-sm">
+      <p
+        class="bg-neutral-100 rounded px-4 py-1">
+        <span>$1.00</span>
+        {`= Bs.S`}
+        <span>{bcvPrice.get()}</span>
+      </p>
+      <ThemeSelector />
+    </div>
   </div>
 </header>
+
+<style>
+  span {
+    @apply font-semibold 
+  }
+</style>

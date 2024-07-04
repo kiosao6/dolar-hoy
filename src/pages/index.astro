@@ -1,8 +1,10 @@
 ---
-import CurrencyButton from '@components/currencyButton/CurrencyButton.astro';
 import Layout from '../layouts/Layout.astro';
 import MainAmount from '@components/mainAmount/MainAmount.astro';
 import Form from '@components/inputFields/Form.astro';
+import { CurrencyButton } from '@components/currencyButton/CurrencyButton';
+import { bcvPrice, paraleloPrice } from 'src/store';
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,12 +14,12 @@ import Form from '@components/inputFields/Form.astro';
 			<h2 class="text-neutral-500 text-[15px] tracking-tight">Convierte dólares a bolívares usando la tasa de tu preferencia</h2>
 		</header>
 		<section class="w-full border rounded-xl mt-8 p-6">
-			<div class="flex bg-zinc-100 w-fit p-2 rounded-lg h-11 items-center text-xs tracking-tight">
-				<CurrencyButton title='BCV' amount={36.7} />
-				<CurrencyButton title='Paralelo' amount={40.00} />
+			<div class="flex bg-zinc-100 gap-2 w-fit p-2 rounded-lg h-11 items-center text-xs tracking-tight">
+				<CurrencyButton title='BCV' amount={bcvPrice.get()} client:visible />
+				<CurrencyButton title='Paralelo' amount={paraleloPrice.get()} client:visible />
 			</div>
 
-			<MainAmount />
+			<MainAmount amount={`${bcvPrice.get()}`} />
 			<Form />
 		</section>
 	</main>
