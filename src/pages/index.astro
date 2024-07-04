@@ -3,7 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import MainAmount from '@components/mainAmount/MainAmount.astro';
 import Form from '@components/inputFields/Form.astro';
 import { CurrencyButton } from '@components/currencyButton/CurrencyButton';
-import { bcvPrice, paraleloPrice } from 'src/store';
+
+import { paraleloPrice, bcvPrice, lastUpdated } from "src/store";
+
+const DOLLAR_URL = 'https://pydolarvenezuela-api.vercel.app/api/v1/dollar'
+const response = await fetch(DOLLAR_URL);
+const data = await response.json();
+paraleloPrice.set(data.monitors.enparalelovzla.price)
+bcvPrice.set(data.monitors.bcv.price)
+lastUpdated.set(data.monitors.bcv.last_update)
 
 ---
 
