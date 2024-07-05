@@ -3,16 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import MainAmount from '@components/mainAmount/MainAmount.astro';
 import Form from '@components/inputFields/Form.astro';
 import { CurrencyButton } from '@components/currencyButton/CurrencyButton';
-
-import { paraleloPrice, bcvPrice, lastUpdated } from "src/store";
-
-const DOLLAR_URL = 'https://pydolarvenezuela-api.vercel.app/api/v1/dollar'
-const response = await fetch(DOLLAR_URL);
-const data = await response.json();
-paraleloPrice.set(data.monitors.enparalelovzla.price)
-bcvPrice.set(data.monitors.bcv.price)
-lastUpdated.set(data.monitors.bcv.last_update)
-
+import { dollarPrice } from "src/store";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,11 +14,11 @@ lastUpdated.set(data.monitors.bcv.last_update)
 		</header>
 		<section class="w-full border rounded-xl mt-8 p-6">
 			<div class="flex bg-zinc-100 gap-2 w-fit p-2 rounded-lg h-11 items-center text-xs tracking-tight">
-				<CurrencyButton title='BCV' amount={bcvPrice.get()} client:visible />
-				<CurrencyButton title='Paralelo' amount={paraleloPrice.get()} client:visible />
+				<CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
+				<CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
 			</div>
 
-			<MainAmount amount={`${bcvPrice.get()}`} />
+			<MainAmount />
 			<Form />
 		</section>
 	</main>

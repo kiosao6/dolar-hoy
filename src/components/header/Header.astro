@@ -1,6 +1,6 @@
 ---
 import ThemeSelector from "@components/themeSelector/ThemeSelector.astro";
-import { bcvPrice } from "src/store";
+import { dollarPrice } from "src/store";
 ---
 
 <header class="border-b py-5">
@@ -11,7 +11,7 @@ import { bcvPrice } from "src/store";
         class="bg-neutral-100 rounded px-4 py-1">
         <span>$1.00</span>
         {`= Bs.S`}
-        <span>{bcvPrice.get()}</span>
+        <span>{dollarPrice.get().bcv}</span>
       </p>
       <ThemeSelector />
     </div>

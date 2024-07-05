@@ -3,22 +3,22 @@ import { vibrate } from "lib/vibrate";
 import { activeCurrency } from "src/store";
 
 interface Props {
-  title: string;
+  title: 'BCV' | 'Paralelo';
   amount: number;
 }
 
 export const CurrencyButton = ({
-  title,
+  title = 'BCV',
   amount
 }: Props) => {
 
-  const $currency = useStore(activeCurrency);
-  const active = (`${$currency}` === title) ? "bg-white shadow !text-black" : '';
+  const { tasa } = useStore(activeCurrency);
+  const active = tasa === title ? "bg-white shadow !text-black" : '';
+
   const onHandleClick = () => {
     vibrate();
-    activeCurrency.set(title)
+    activeCurrency.set( { tasa: title } )
   };
-
 
   return (
     <button
