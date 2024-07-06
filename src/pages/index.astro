@@ -14,7 +14,7 @@ import { CopyButton } from '@components/copyButton/CopyButton'
 			<h2 class="text-neutral-500 text-[15px] tracking-tight">Convierte dólares a bolívares usando la tasa de tu preferencia</h2>
 		</header>
 		<section class="w-full border rounded-xl mt-8 p-6">
-			<div class="flex justify-between w-full">
+			<div class="flex justify-between w-full items-center">
 				<div class="bg-neutral-100 flex gap-2 p-2 rounded-lg h-11 items-center text-xs tracking-tight">
 					<CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
 					<CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
