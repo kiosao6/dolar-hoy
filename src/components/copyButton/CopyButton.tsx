@@ -22,17 +22,13 @@ export const CopyButton = ({ amount }: Props) => {
 
   return (
     <button
-      className={`size-8 flex items-center justify-center hover:bg-[#404053] rounded transition-all relative`}
+      className={`copy size-8 flex items-center justify-center hover:bg-[#404053] rounded transition-all relative`}
       onClick={copyToClipboard}
       disabled={isActiveAnimation}
       aria-label="Copy Button"
     >
-      {
-        isActiveAnimation ? (
-          <CopySvg data-hide={isActiveAnimation} />
-        ) : 
-        <CheckIcon data-hide={!isActiveAnimation} />
-      }
+      <CopySvg data-hide={isActiveAnimation} />
+      <CheckIcon data-hide={!isActiveAnimation} />
 
     </button>
   )
