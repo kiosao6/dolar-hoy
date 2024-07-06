@@ -4,6 +4,7 @@ import MainAmount from '@components/mainAmount/MainAmount.astro';
 import Form from '@components/inputFields/Form.astro';
 import { CurrencyButton } from '@components/currencyButton/CurrencyButton';
 import { dollarPrice } from "src/store";
+import { CopyButton } from '@components/copyButton/CopyButton'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,8 +15,11 @@ import { dollarPrice } from "src/store";
 		</header>
 		<section class="w-full border rounded-xl mt-8 p-6">
 			<div class="flex bg-zinc-100 gap-2 w-fit p-2 rounded-lg h-11 items-center text-xs tracking-tight">
-				<CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
-				<CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
+				<div>
+					<CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
+					<CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
+				</div>
+				<CopyButton amount='' client:visible />
 			</div>
 
 			<MainAmount />

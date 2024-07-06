@@ -10,6 +10,7 @@ export const activeCurrency = map({
 });
 
 export const lastUpdated = atom('')
+export const totalPrice = atom(0);
 
 
 // Fetch to get and update the prices
@@ -18,8 +19,8 @@ const response = await fetch(DOLLAR_URL);
 const data = await response.json();
 
 dollarPrice.set({
-	bcv: data.monitors.bcv.price,
-	paralelo: data.monitors.enparalelovzla.price
+  bcv: data.monitors.bcv.price || 0,
+  paralelo: data.monitors.enparalelovzla.price || 0
 })
 
 lastUpdated.set(data.monitors.bcv.last_update)

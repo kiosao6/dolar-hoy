@@ -1,42 +1,58 @@
 ---
-import Header from '@components/header/Header.astro';
+import Header from "@components/header/Header.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
 
-
 <style is:global>
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/InterVariable.woff2') format('woff2');
-		font-weight: 100 900;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	html {
-		font-family: Inter;
-		font-feature-settings: 'cv10' 1, 'cv05' 1, 'ss03' 1;
-	}
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: Inter;
+    font-feature-settings:
+      "cv10" 1,
+      "cv05" 1,
+      "ss03" 1;
+  }
+
+  .copy svg {
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
+  }
+
+  .copy svg[data-hide="true"] {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
 </style>
