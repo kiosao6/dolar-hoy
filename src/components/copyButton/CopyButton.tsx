@@ -22,7 +22,7 @@ export const CopyButton = ({ amount }: Props) => {
 
   return (
     <button
-      className='copy cursor-default bg-neutral-100 size-8 flex items-center justify-center hover:bg-neutral-200 rounded transition-all relative'
+      className='copy cursor-default bg-neutral-100 size-11 flex items-center justify-center hover:bg-neutral-200 rounded-lg transition-all relative'
       onClick={copyToClipboard}
       disabled={isActiveAnimation}
       aria-label="Copy Button"
