@@ -8,7 +8,7 @@ export const BigNumber = () => {
   const $price = useStore(dollarPrice as any )[$tasa]
 
   return (
-    <p className='transition-all'>
+    <p>
       {$price}
     </p>
   )
