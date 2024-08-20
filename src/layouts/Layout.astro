@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark:bg-neutral-900">
     <Header />
     <slot />
   </body>
@@ -54,5 +54,17 @@ const { title } = Astro.props;
   .copy svg[data-hide="true"] {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 </style>

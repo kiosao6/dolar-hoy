@@ -1,0 +1,12 @@
+---
+import { BigNumber } from '@components/mainContainer/BigNumber'
+import { lastUpdated } from 'src/store'
+---
+
+<div class="flex items-center flex-col space-y-4 my-14 text-6xl mx-auto w-fit font-semibold">
+  <BigNumber client:visible />
+  <div class="flex flex-col text-center text-xs space-y-1 text-neutral-500">
+    <span class="font-normal dark:text-neutral-400">Última actualización</span>
+    <span class="font-bold text-neutral-600 dark:text-neutral-400">{lastUpdated.get().split(',')[0]}</span>
+  </div>
+</div>

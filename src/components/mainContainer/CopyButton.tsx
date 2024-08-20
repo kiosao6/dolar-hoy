@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-interface Props {
-  amount: string;
-}
-export const CopyButton = ({ amount }: Props) => {
+export const CopyButton = () => {
 
   const [isActiveAnimation, setIsActiveAnimation] = useState<boolean>(false)
+  const amountToCopy = document.querySelector('#number')?.textContent
 
   const copyToClipboard = async () => {
 
     try {
-      await navigator.clipboard.writeText(amount);
+      await navigator.clipboard.writeText(amountToCopy as string);
+      console.log(amountToCopy)
       setIsActiveAnimation(true)
       setTimeout(() => {
         setIsActiveAnimation(false)
@@ -22,7 +21,7 @@ export const CopyButton = ({ amount }: Props) => {
 
   return (
     <button
-      className='copy cursor-default bg-neutral-100 size-11 flex items-center justify-center hover:bg-neutral-200 rounded-lg transition-all relative'
+      className='copy cursor-default bg-neutral-100 size-11 flex items-center justify-center hover:bg-neutral-200 rounded-lg transition-all relative dark:bg-transparent dark:border-neutral-600 dark:border dark:hover:bg-neutral-700'
       onClick={copyToClipboard}
       disabled={isActiveAnimation}
       aria-label="Copy Button"

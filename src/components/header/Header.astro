@@ -1,19 +1,19 @@
 ---
-import ThemeSelector from "@components/themeSelector/ThemeSelector.astro";
+import { ThemeSelector } from "@components/header/ThemeSelector";
 import { dollarPrice } from "src/store";
 ---
 
-<header class="border-b py-5">
-  <div class="max-w-7xl px-8 xl:px-0 mx-auto flex items-center justify-between">
+<header class="border-b py-5 dark:bg-neutral-800 dark:border-neutral-600">
+  <div class="max-w-7xl px-8 xl:px-0 mx-auto flex items-center justify-between dark:text-neutral-100">
     Dólar hoy
     <div class="flex items-center gap-2 text-sm">
       <p
-        class="bg-neutral-100 rounded px-4 py-1">
+        class="bg-neutral-100 rounded px-4 py-1 dark:bg-neutral-700">
         <span>$1.00</span>
         {`= Bs.S`}
         <span>{dollarPrice.get().bcv}</span>
       </p>
-      <ThemeSelector />
+      <ThemeSelector client:visible />
     </div>
   </div>
 </header>

@@ -1,0 +1,9 @@
+---
+import { InputField } from "./InputField";
+
+---
+
+<form class="space-y-4 lg:grid lg:grid-cols-2 lg:space-y-0 lg:gap-10">
+  <InputField title="Dólares" currencyIndicator="$" indicator="dolar" client:visible/>
+  <InputField title="Bolívares" indicator="bolivar" currencyIndicator="Bs.S" client:visible/>
+</form>

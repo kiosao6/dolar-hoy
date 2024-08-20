@@ -1,29 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MainAmount from '@components/mainAmount/MainAmount.astro';
-import Form from '@components/inputFields/Form.astro';
-import { CurrencyButton } from '@components/currencyButton/CurrencyButton';
-import { dollarPrice } from "src/store";
-import { CopyButton } from '@components/copyButton/CopyButton'
+import Title from '@components/title/Title.astro';
+import MainContainer from '@components/mainContainer/MainContainer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main class="max-w-2xl mx-auto mt-8 px-8 xl:px-0">
-		<header class="space-y-1">
-			<h1 class="text-3xl tracking-tight font-[550]">Calculadora</h1>
-			<h2 class="text-neutral-500 text-[15px] tracking-tight">Convierte dólares a bolívares usando la tasa de tu preferencia</h2>
-		</header>
-		<section class="w-full border rounded-xl mt-8 p-6">
-			<div class="flex justify-between w-full items-center">
-				<div class="bg-neutral-100 flex gap-2 p-2 rounded-lg h-11 items-center text-xs tracking-tight">
-					<CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
-					<CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
-				</div>
-				<CopyButton amount='' client:visible />
-			</div>
+		<Title />
+		<MainContainer />
 
-			<MainAmount />
-			<Form />
-		</section>
+		<!-- Text for mom -->
+		<p class="text-neutral-500 text-[13px] tracking-tight dark:text-neutral-400">Te quiero mamá :)</p>
 	</main>
 </Layout>
