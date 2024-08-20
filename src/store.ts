@@ -1,4 +1,3 @@
-export const prerender = false;
 import { atom, map } from "nanostores";
 
 export const dollarPrice = map({
