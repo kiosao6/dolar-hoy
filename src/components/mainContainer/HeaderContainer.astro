@@ -6,8 +6,8 @@ import { CopyButton } from "./CopyButton";
 
 <div class="flex justify-between w-full items-center">
   <div class="bg-neutral-100 flex gap-2 p-2 rounded-lg h-11 items-center text-xs tracking-tight dark:bg-neutral-800">
-    <CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:visible />
-    <CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:visible />
+    <CurrencyButton title='BCV' amount={dollarPrice.get().bcv} client:only />
+    <CurrencyButton title='Paralelo' amount={dollarPrice.get().paralelo} client:only />
   </div>
   <CopyButton client:only />
 </div>
