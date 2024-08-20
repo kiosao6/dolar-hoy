@@ -5,7 +5,6 @@
     "paths": {
       "@components/*": [
         "src/components/*",
-        "src/store.ts"
       ],
       "@assets/*": [
         "src/assets/*",
