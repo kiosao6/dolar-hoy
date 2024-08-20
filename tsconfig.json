@@ -4,11 +4,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "src/components/*",
+        "src/store.ts"
       ],
       "@assets/*": [
         "src/assets/*",
-        "src/store.ts"
       ]
     },
     "jsx": "react-jsx",
