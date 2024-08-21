@@ -26,7 +26,7 @@ export const totalPrice = atom(0);
 
 
 // Fetch to get and update the prices
-const DOLLAR_URL = 'http://pydolarve.org/api/v1/dollar'
+const DOLLAR_URL = 'https://mini-api-kappa.vercel.app/api/tasas'
 const response = await fetch(DOLLAR_URL);
 const data = await response.json();
 
