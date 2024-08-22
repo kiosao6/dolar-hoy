@@ -26,7 +26,7 @@ export const totalPrice = atom(0);
 
 
 // Fetch to get and update the prices
-const DOLLAR_URL = 'https://mini-api-kappa.vercel.app/api/tasas'
+const DOLLAR_URL = 'https://mini-api-kappa.vercel.app/api/tasas';
 const response = await fetch(DOLLAR_URL);
 const data = await response.json();
 
@@ -35,4 +35,4 @@ dollarPrice.set({
   paralelo: data.monitors.enparalelovzla.price || 0
 })
 
-lastUpdated.set(data.monitors.bcv.last_update)
+lastUpdated.set(data.datetime.date)
