@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { dollarPrice, inputValues, isDollarActive } from "src/store";
+import { activeCurrency, dollarPrice, inputValues, isDollarActive } from "src/store";
 
 interface Props {
   title: string;
@@ -12,10 +12,10 @@ export const InputField = ({
   currencyIndicator,
   indicator
 }: Props) => {
-
-  const $paraleloPrice = useStore(dollarPrice)['paralelo']
+  const $activeCurrency = useStore(activeCurrency).tasa.toLowerCase();
+  const $dolarPrice = useStore(dollarPrice as any )[$activeCurrency]
   const paddingToAdd = currencyIndicator == '$' ? 'ps-8' : '!ps-16'
-  const placeholder = currencyIndicator == '$' ? '1.00' : $paraleloPrice.toString()
+  const placeholder = currencyIndicator == '$' ? '1.00' : $dolarPrice.toString()
   
   const onChangeInput = (e: any) => {
     if(indicator === 'dolar') {

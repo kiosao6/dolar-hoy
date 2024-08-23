@@ -16,7 +16,7 @@ export const BigNumber = () => {
   const priceToShowIfBolivarIsActive = $inputValue! <= 0 ? $price : ($inputValue! / $price).toFixed(2)
 
   return (
-    <p id='number' className='dark:text-neutral-100'>
+    <p id='number' className='dark:text-neutral-100 text-center'>
       {
         (bolivarInput! <= 0 || bolivarInput! == undefined) ? 'Bs ' : '$ '
       }
