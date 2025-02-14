@@ -1,9 +1,8 @@
 import { useStore } from "@nanostores/react";
-import { vibrate } from "lib/vibrate";
-import { activeCurrency } from "src/store";
+import { activeCurrency } from "@store";
 
 interface Props {
-  title: 'BCV' | 'Paralelo';
+  title: 'BCV' | 'Paralelo' | 'Promedio';
   amount: number;
 }
 
@@ -16,7 +15,6 @@ export const CurrencyButton = ({
   const active = tasa === title ? "bg-white shadow !text-black dark:bg-neutral-700 dark:!text-neutral-300 dark:hover:bg-neutral-600" : 'dark:!text-neutral-400';
 
   const onHandleClick = () => {
-    vibrate();
     activeCurrency.set( { tasa: title } )
   };
 

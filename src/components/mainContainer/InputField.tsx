@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { activeCurrency, dollarPrice, inputValues, isDollarActive } from "src/store";
+import { activeCurrency, dollarPrice, inputValues, isDollarActive } from "@store";
 
 interface Props {
   title: string;
@@ -19,11 +19,16 @@ export const InputField = ({
   
   const onChangeInput = (e: any) => {
     if(indicator === 'dolar') {
-      inputValues.set({ dolar: e.target.value, bolivares: null })
+      inputValues.set({ dolar: e.target.value, bolivares: null, promedio: null })
       isDollarActive.set(true);
       return;
     }
-    inputValues.set({ bolivares: e.target.value, dolar: null })
+    if(indicator == 'promedio') {
+      inputValues.set({ promedio: e.target.value, bolivares: null, dolar: null })
+      isDollarActive.set(true);
+      return;
+    }
+    inputValues.set({ bolivares: e.target.value, dolar: null, promedio: null })
     isDollarActive.set(false)
   };
 

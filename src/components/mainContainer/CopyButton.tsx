@@ -3,28 +3,28 @@ import { useState } from "react";
 export const CopyButton = () => {
 
   const [isActiveAnimation, setIsActiveAnimation] = useState<boolean>(false)
-  const amountToCopy = document.querySelector('#number')?.textContent
-
-  const copyToClipboard = async () => {
-
+  
+  const copyToClipboard = () => {
     try {
-      await navigator.clipboard.writeText(amountToCopy as string);
+      const amountToCopy = document.querySelector('#number')?.textContent
       console.log(amountToCopy)
+      navigator.clipboard.writeText(amountToCopy as string)
       setIsActiveAnimation(true)
       setTimeout(() => {
         setIsActiveAnimation(false)
       }, 700)
     } catch (error) {
-      console.error("Error copying to clipboard", error);
+      console.log(error)
     }
   };
 
   return (
     <button
-      className='copy cursor-default bg-neutral-100 size-11 flex items-center justify-center hover:bg-neutral-200 rounded-lg transition-all relative dark:bg-transparent dark:border-neutral-600 dark:border dark:hover:bg-neutral-700'
+      className='copy cursor-default bg-neutral-100 size-10 flex items-center justify-center hover:bg-neutral-200 rounded-lg transition-all relative dark:bg-transparent dark:border-neutral-600 dark:border dark:hover:bg-neutral-700 dark:hover:bg-transparent dark:hover:border-neutral-400'
       onClick={copyToClipboard}
       disabled={isActiveAnimation}
       aria-label="Copy Button"
+      title="Copiar"
     >
       <CopySvg data-hide={isActiveAnimation} />
       <CheckIcon data-hide={!isActiveAnimation} />
