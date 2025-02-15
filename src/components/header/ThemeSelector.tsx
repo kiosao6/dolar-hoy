@@ -12,7 +12,7 @@ export const ThemeSelector = () => {
   return (
     <button
       onClick={onHandleTheme}
-      className="h-8 w-8 flex cursor-default items-center justify-center rounded-md hover:bg-zinc-100 transition-colors border shadow hover:shadow-sm dark:border-neutral-600 dark:hover:bg-neutral-700"
+      className="h-8 w-8 flex cursor-default items-center justify-center rounded-md hover:bg-zinc-100 transition-colors border dark:border-neutral-600 dark:hover:bg-neutral-700"
       aria-label="Theme palette button switcher"
     >
       {
